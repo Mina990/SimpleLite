@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/browser_settings_title">
+
+        <com.creativetrends.simple.app.preferences.ListPreferenceCompat
+            android:defaultValue="in_app_browser"
+            android:entries="@array/browser_choice"
+            android:entryValues="@array/browser_select"
+            android:key="key_pref_browser"
+            android:summary="%s."
+            android:title="@string/open_external" />
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="true"
+            android:key="peek_View"
+            android:summary="@string/popup_settings_sum"
+            android:title="@string/popup_settings_title" />
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+</PreferenceScreen>

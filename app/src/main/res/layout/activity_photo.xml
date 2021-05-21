@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/rel_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/empty_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:animateLayoutChanges="true"/>
+
+
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/progress_photo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"/>
+
+
+
+        <LinearLayout
+            android:id="@+id/len"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_card_drawable"
+            android:visibility="invisible"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_options"
+                    android:layout_centerVertical="true"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:ignore="HardcodedText,RelativeOverlap" />
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:alpha="0.4"
+                    android:src="@drawable/ic_cast"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="4"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                tools:ignore="UselessParent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save_image"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:layout_marginEnd="6dp"
+                    android:drawableTop="@drawable/ic_download"
+                    android:text="@string/download"
+                    android:textSize="10sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:drawablePadding="16dp"
+                    tools:ignore="SmallSp"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/copy_photo"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:layout_marginEnd="6dp"
+                    android:drawableTop="@drawable/ic_copy"
+                    android:text="@string/copy_url"
+                    android:textSize="10sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:drawablePadding="16dp"
+                    tools:ignore="SmallSp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/open_photo"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:layout_marginEnd="6dp"
+                    android:drawableTop="@drawable/ic_open_browser"
+                    android:text="@string/open_in_browser"
+                    android:textSize="10sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_weight="1"
+                    android:drawablePadding="16dp"
+                    tools:ignore="SmallSp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/share_image"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:drawableTop="@drawable/ic_share_now"
+                    android:text="@string/context_share_image"
+                    android:textSize="10sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_weight="1"
+                    android:drawablePadding="16dp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/toolbar_top"
+                android:contentInsetStart="0dp"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:elevation="0dp"
+                app:titleTextAppearance="@style/Toolbar.TitleText">
+
+
+                <ImageView
+                    android:id="@+id/pip_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_pip"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone"
+                    tools:ignore="ContentDescription"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

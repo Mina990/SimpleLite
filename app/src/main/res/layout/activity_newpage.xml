@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.creativetrends.simple.app.ui.AnimatedProgressBar
+            android:layout_below="@+id/appbar"
+            android:id="@+id/tabs_progress"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:indeterminate="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:bidirectionalAnimate="true"
+            app:progressColor="?attr/colorAccent"/>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.creativetrends.simple.app.webview.NestedWebView
+                android:id="@+id/webViewPage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/imageExtrasFABHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:visibility="gone">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/downloadFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="56dp"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                android:src="@drawable/ic_download"
+                app:fabSize="mini"
+                app:elevation="4dp"
+                app:borderWidth="0dp"
+                app:useCompatPadding="true"
+                app:tint="@color/white"
+                app:rippleColor="@color/md_white_1000_25"/>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fullImageFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                app:backgroundTint="?attr/colorPrimaryDark"
+                android:src="@drawable/ic_photo_size"
+                app:fabSize="mini"
+                app:elevation="4dp"
+                app:borderWidth="0dp"
+                app:useCompatPadding="true"
+                app:tint="@color/white"
+                app:rippleColor="@color/md_white_1000_25"/>
+
+
+        </RelativeLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/loading_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/loading"
+            android:visibility="gone" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <include layout="@layout/search_layout" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

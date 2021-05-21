@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory android:title="Customizations &amp; Themes">
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="custom_color"
+            android:summary="Choose an accent color for Simple. Your accent color will color buttons and icons, the video player and other items. Your accent color will appear darker when using a dark theme."
+            android:title="Custom Accent Color" />
+
+
+        <com.creativetrends.simple.app.preferences.ListPreferenceCompat
+            android:defaultValue="materialtheme"
+            android:entries="@array/pref_theme_fb_entries"
+            android:entryValues="@array/pref_theme_values_free"
+            android:key="theme_preference_fb"
+            android:summary="%s."
+            android:title="App Theme" />
+
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="color_status"
+            android:summary="@string/enable_color_status"
+            android:title="@string/color_status_bar" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="color_nav"
+            android:title="@string/color_navigation" />
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="auto_night"
+            android:title="@string/auto_night_title" />
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+</PreferenceScreen>

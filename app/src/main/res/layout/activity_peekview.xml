@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/back_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:clipToPadding="false">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_float"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="0dp">
+
+
+        <com.creativetrends.simple.app.webview.NestedWebView
+            android:id="@+id/peek_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none" />
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/imageExtrasFABHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:visibility="gone">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/downloadFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/ic_download"
+            app:backgroundTint="?attr/colorPrimaryDark"
+            app:borderWidth="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:rippleColor="@color/md_white_1000_25"
+            app:tint="@color/white"
+            app:useCompatPadding="true"
+            tools:ignore="ContentDescription" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fullImageFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_photo_size"
+            app:backgroundTint="?attr/colorPrimaryDark"
+            app:borderWidth="2dp"
+            app:elevation="2dp"
+            app:fabSize="mini"
+            app:rippleColor="@color/md_white_1000_25"
+            app:tint="@color/white"
+            app:useCompatPadding="true"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

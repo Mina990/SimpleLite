@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Jorell Rutledge on 5/23/19 10:42 AM
+  ~  * Copyright (c) 2019 . All rights reserved.
+  ~  * Last modified 5/23/19 10:42 AM
+  ~  */
+  -->
+
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/simple_bar_widget_light"
+    android:minWidth="294dp"
+    android:minHeight="40dp"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"/>

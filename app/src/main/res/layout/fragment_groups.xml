@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="4dp">
+
+
+            <ImageView
+                android:id="@+id/icon_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/ic_news_more"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/no_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_marginStart="16dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/groups"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="@dimen/no_text"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mark_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="22dp"
+                    android:layout_toStartOf="@+id/no_settings"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_group_search"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/no_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_create_page"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/cardStrokes"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.creativetrends.simple.app.ui.AnimatedProgressBar
+            android:layout_below="@+id/card_notifications"
+            android:id="@+id/tabs_progress"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:indeterminate="false"
+            app:bidirectionalAnimate="true"
+            app:progressColor="?attr/colorAccent"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/frag_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/card_notifications"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.creativetrends.simple.app.webview.NestedWebView
+                android:id="@+id/frag_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:scrollbars="none" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/loading_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="@string/loading"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</FrameLayout>

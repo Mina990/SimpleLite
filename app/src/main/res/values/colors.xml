@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="demo_colors">
+        <item>@color/md_falcon_500</item>
+        <item>@color/PrimaryColor</item>
+        <item>@color/md_blue_700</item>
+        <item>@color/new_facebook</item>
+        <item>@color/jorell_blue</item>
+        <item>@color/md_cyan_500</item>
+        <item>@color/falcons</item>
+        <item>@color/md_red_500</item>
+        <item>@color/bcP</item>
+        <item>@color/md_pink_300</item>
+        <item>@color/vikings</item>
+        <item>@color/md_purple_500</item>
+        <item>@color/md_deep_purple_500</item>
+        <item>@color/ps_green</item>
+        <item>@color/md_green_500</item>
+        <item>@color/md_light_green_500</item>
+        <item>@color/md_deep_orange_500</item>
+        <item>@color/md_amber_500</item>
+        <item>@color/black</item>
+        <item>@color/dark</item>
+        <item>@color/silver</item>
+        <item>@color/md_brown_500</item>
+        <item>@color/saints</item>
+    </array>
+    <color name="new_facebook">#1778F2</color>
+    <color name="defaultcolor">#EAEBEF</color>
+    <color name="darcula">#292929</color>
+    <color name="dark">#212121</color>
+    <color name="PrimaryColor">#3b5999</color>
+    <color name="white">#ffffff</color>
+    <color name="black_semi_transparent">#10000000</color>
+    <color name="md_white_1000_25">#b3ffffff</color>
+    <color name="bcP">#C2185B</color>
+    <color name="dcP">#090909</color>
+    <color name="colorAccent">#4063a0</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="black">#000000</color>
+    <color name="md_red_500">#f44336</color>
+    <color name="md_deep_purple_500">#9c27b0</color>
+    <color name="md_blue_700">#1976d2</color>
+    <color name="md_cyan_500">#00bcd4</color>
+    <color name="md_green_500">#4caf50</color>
+    <color name="md_light_green_500">#8bc34a</color>
+    <color name="md_amber_500">#ffc107</color>
+    <color name="md_deep_orange_500">#ff5722</color>
+    <color name="md_blue_grey_500">#292929</color>
+    <color name="md_blue_grey_700">#202020</color>
+    <color name="md_falcon_500">#384e77</color>
+    <color name="md_pink_300">#f1788b</color>
+    <color name="md_purple_500">#673ab7</color>
+    <color name="md_brown_500">#795548</color>
+    <color name="colorSemiWhite">#4dffffff</color>
+    <color name="falcons">#A71930</color>
+    <color name="saints">#D3BC8D</color>
+    <color name="vikings">#4F2683</color>
+    <color name="silver">#A5ACAF</color>
+    <color name="m_color">#959595</color>
+    <color name="jorell_blue">#1195DB</color>
+    <color name="jorell_blue_dark">#0d77af</color>
+    <color name="janae_pink">#ea2165</color>
+    <color name="ps_green">#01875F</color>
+    <color name="ps_gray">#7F8185</color>
+    <color name="overflow_darker">#303030</color>
+    <color name="overflow_lighter">#FFFFFF</color>
+    <color name="card_darker">#111111</color>
+    <color name="card_dark">#404040</color>
+    <color name="card_light">#FFFFFF</color>
+    <color name="search_color">@color/m_color</color>
+    <color name="card_dar">#212121</color>
+    <color name="light_nav">#c6c6c6</color>
+    <color name="p_green">#6fc23e</color>
+</resources>

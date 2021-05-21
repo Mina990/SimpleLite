@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="auth" translatable="false">com.creativetrends.simple.app.lite.provider</string>
+    <string name="live_feed" translatable="false">/live-dash/</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+        android:defaultValue="false"
+        android:key="tab_labels"
+        android:summary="@string/tab_labels_sum"
+        android:title="@string/tab_labels_title" />
+
+    <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+        android:defaultValue="true"
+        android:key="lock_tabs"
+        android:summary="@string/lock_tabs_title"
+        android:title="@string/lock_tabs_sum" />
+
+    <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+        android:defaultValue="true"
+        android:key="swipe_tabs"
+        android:summary="@string/swipe_tabs_summary"
+        android:title="@string/swipe_tabs_title" />
+
+    <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+        android:defaultValue="false"
+        android:key="top_tabs"
+        android:summary="@string/top_tabs_sum_new"
+        android:title="@string/top_tabs_title" />
+
+
+    <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+        android:defaultValue="false"
+        android:key="load_all"
+        android:summary="Enable to load all tabs when starting Simple. This may cause Simple Lite to start slower."
+        android:title="Load All Tabs" />
+
+
+</PreferenceScreen>

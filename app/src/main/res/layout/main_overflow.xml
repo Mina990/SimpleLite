@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:focusable="false">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_menu"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:cardElevation="6dp"
+        app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="?overFlowColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/update_lin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:text="@string/update_available"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="15sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:drawableStartCompat="@drawable/ic_app_updated_new" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/update_available_text"
+                    android:textSize="12sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    tools:ignore="SmallSp"
+                    app:drawableStartCompat="@null" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/overflow_pokes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:padding="12dp"
+                android:text="@string/pokes"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="15sp"
+                app:drawableStartCompat="@drawable/ic_pokes" />
+
+            <TextView
+                android:id="@+id/overflow_online"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:padding="12dp"
+                android:text="@string/active_online"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="15sp"
+                app:drawableStartCompat="@drawable/ic_online_overflow" />
+
+            <TextView
+                android:id="@+id/overflow_market"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:padding="12dp"
+                android:text="@string/market_place"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="15sp"
+                app:drawableStartCompat="@drawable/ic_market_tabs" />
+
+
+            <TextView
+                android:id="@+id/overflow_settings"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:padding="12dp"
+                android:text="@string/settings"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="15sp"
+                app:drawableStartCompat="@drawable/ic_settings" />
+
+
+            <TextView
+                android:id="@+id/overflow_close"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:drawablePadding="8dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="8dp"
+                android:padding="12dp"
+                android:text="@string/close"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="15sp"
+                app:drawableStartCompat="@drawable/ic_close_new" />
+
+            <LinearLayout
+                android:id="@+id/lin_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:alpha="0.3"
+                    android:background="@color/m_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="1dp"
+                    android:ellipsize="end"
+                    android:gravity="center|center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/most_recent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/ic_news" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackground"
+                    android:drawablePadding="1dp"
+                    android:ellipsize="end"
+                    android:gravity="center|center_vertical"
+                    android:maxLines="1"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/top_stories"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/ic_top_stories" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

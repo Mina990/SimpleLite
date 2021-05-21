@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.creativetrends.simple.app.lite"
+    android:installLocation="auto"
+    android:versionCode="10073"
+    android:versionName="10.7.3">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.fingerprint"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+
+    <application
+        android:name="com.creativetrends.simple.app.SimpleApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name_pro"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:requestLegacyExternalStorage="true"
+        tools:replace="android:label"
+        tools:targetApi="n"
+        tools:ignore="UnusedAttribute">
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.LoginActivity"
+            android:configChanges="locale|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name_pro"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.MainActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="facebook.com"
+                    android:scheme="http" />
+                <data
+                    android:host="facebook.com"
+                    android:scheme="https" />
+                <data
+                    android:host="*.facebook.com"
+                    android:scheme="http" />
+                <data
+                    android:host="*.facebook.com"
+                    android:scheme="https" />
+                <data
+                    android:host="fb.me"
+                    android:scheme="http" />
+                <data
+                    android:host="fb.me"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.SettingsActivity"
+            android:configChanges="locale|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.creativetrends.simple.app.activities.MainActivity"
+            android:theme="@style/FalconSettings"
+            tools:ignore="UnusedAttribute">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.creativetrends.simple.app.activities.MainActivity" />
+        </activity>
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.BrowserActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:parentActivityName="com.creativetrends.simple.app.activities.MainActivity"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="UnusedAttribute">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.creativetrends.simple.app.activities.MainActivity" />
+
+        </activity>
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.BrowserPopup"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:parentActivityName="com.creativetrends.simple.app.activities.MainActivity"
+            android:theme="@style/OneTapPop"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="UnusedAttribute">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.creativetrends.simple.app.activities.MainActivity" />
+
+        </activity>
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.Sharer"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:label="Sharer"
+            android:theme="@style/OneTapPop"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="ExportedActivity" />
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.PopupView"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            android:label="Peek View"
+            android:taskAffinity=".MainActivity"
+            android:theme="@style/OneTapPop"
+            android:windowSoftInputMode="adjustResize"
+            tools:ignore="ExportedActivity" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.SwitchActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:excludeFromRecents="true"
+            android:hardwareAccelerated="true"
+            android:label="Switch Accounts"
+            android:taskAffinity=".MainActivity"
+            android:theme="@style/OneTapPop"
+            android:windowSoftInputMode="adjustResize" />
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.simplelock.SimpleLock"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.VideoActivity"
+            android:configChanges="locale|screenSize|smallestScreenSize|screenLayout|orientation"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemePhoto" />
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.WebViewLoginActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:theme="@style/OneTap"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.PhotoActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:hardwareAccelerated="true"
+            android:label="@string/photos"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemePhoto" />
+
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.SplashActivity"
+            android:configChanges="locale|orientation|screenSize"
+            android:label=""
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.crashreports.CrashActivity"
+            android:process=":error_activity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.creativetrends.simple.app.activities.MarketPlaceActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.creativetrends.simple.app.activities.NewPageActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.creativetrends.simple.app.activities.DownloadsActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.creativetrends.simple.app.activities.PhotoPage"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.creativetrends.simple.app.activities.WatchActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.PinsActivity"
+            android:configChanges="locale|screenSize|smallestScreenSize|screenLayout|orientation"
+            android:label="Smart Pins"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.MessageActivity"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.creativetrends.simple.app.activities.MessengerCall"
+            android:configChanges="locale|orientation|screenSize|uiMode"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!--<activity
+            android:name="com.creativetrends.simple.app.activities.DonateActivity"
+            android:label="Support Development"
+            android:configChanges="locale|screenSize|smallestScreenSize|screenLayout|orientation"
+            android:windowSoftInputMode="adjustResize"/>-->
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+
+
+        <receiver
+            android:name="com.creativetrends.simple.app.widgets.SimpleBarWidgetProvider"
+            android:label="Simple Bar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_simple_bar" />
+        </receiver>
+
+
+        <uses-library
+            android:name="com.sec.android.app.multiwindow"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.sec.android.support.multiwindow"
+            android:value="true" />
+        <meta-data
+            android:name="com.lge.support.SPLIT_WINDOW"
+            android:value="true" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W"
+            android:resource="@dimen/app_defaultsize_w" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H"
+            android:resource="@dimen/app_defaultsize_h" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W"
+            android:resource="@dimen/app_minimumsize_w" />
+        <meta-data
+            android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H"
+            android:resource="@dimen/app_minimumsize_h" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <meta-data
+            android:name="android.allow_multiple_resumed_activities"
+            android:value="true"/>
+
+
+        <service
+            android:name="com.creativetrends.simple.app.video.FloatingVideoService"
+            android:enabled="true"
+            android:exported="false" />
+
+
+    </application>
+
+
+</manifest>

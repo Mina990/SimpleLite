@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:contentInsetStart="0dp"
+                    android:theme="@style/AppTheme.AppBarOverlay"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:ignore="UselessParent">
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/close_browser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_close"
+                            android:tint="@color/white"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="46dp"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/toolbarTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:gravity="center"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@android:color/white"
+                            android:textSize="15sp"
+                            android:text="Powered by Simplicity"
+                            tools:text="Powered by Simplicity"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"
+                            android:drawableStart="@drawable/ic_secure_white"
+                            android:drawablePadding="8dp"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageButton
+                            android:id="@+id/pin_browser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_create_pin"
+                            android:tint="@color/white"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="46dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+
+                        <View
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/m_color"/>
+
+                    </RelativeLayout>
+
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <com.creativetrends.simple.app.ui.AnimatedProgressBar
+                    android:id="@+id/browser_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:indeterminate="false"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:progress="50"
+                    app:bidirectionalAnimate="true"
+                    app:progressColor="@color/white"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <com.creativetrends.simple.app.webview.NestedWebView
+                android:id="@+id/simple_webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/lin_browser"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:background="?colorPrimary">
+
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/b_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back_button"
+                android:tint="@color/white"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_weight="1"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/b_forward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_forward_button"
+                android:tint="@color/white"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_weight="1"
+                android:alpha="0.4"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/b_share"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_share_now"
+                android:tint="@color/white"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_weight="1"
+                tools:ignore="ContentDescription" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/b_menu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_overflow"
+                android:tint="@color/white"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:layout_weight="1"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <FrameLayout
+        android:id="@+id/fullscreen_custom_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#000"
+        android:clickable="false"
+        android:visibility="gone"
+        tools:ignore="RtlCompat" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

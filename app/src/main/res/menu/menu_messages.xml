@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <item
+        android:id="@+id/message_call"
+        android:icon="@drawable/ic_phone"
+        android:title="Voice Call"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
+
+    <item
+        android:id="@+id/message_online"
+        android:icon="@drawable/ic_friends"
+        android:title="Active friends"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
+
+    <item
+        android:id="@+id/message_profile"
+        android:icon="@drawable/ic_account"
+        android:title="View profile"
+        app:showAsAction="never"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
+
+    <item
+        android:id="@+id/onepage__pins"
+        android:icon="@drawable/ic_pin_page"
+        android:title="@string/my_pin_items"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/message_pin"
+        android:icon="@drawable/ic_circle"
+        android:title="@string/add_to_pins"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/message_options"
+        android:icon="@drawable/ic_settings"
+        android:title="Message options"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+
+
+</menu>

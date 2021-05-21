@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+        android:checkable="true"/>
+
+    <item
+        android:icon="@drawable/ic_group_other"
+        android:title="@string/groups"
+        android:checkable="true"/>
+
+    <item
+        android:icon="@drawable/ic_notifications_other"
+        android:title="@string/notifications"
+        android:checkable="true"/>
+
+    <item
+        android:icon="@drawable/ic_drawer_new"
+        android:title="@string/settings_more"
+        android:checkable="true"/>
+
+</menu>

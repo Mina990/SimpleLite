@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory android:title="Privacy Settings">
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="simple_locker"
+            android:summary="@string/lock_text_new"
+            android:title="@string/simple_lock" />
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="allow_location"
+            android:summary="Enable for check-ins."
+            android:title="@string/enable_location" />
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+</PreferenceScreen>

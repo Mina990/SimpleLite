@@ -1,0 +1,84 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.creativetrends.simple.app.lite"
+        minSdkVersion 21
+        targetSdkVersion 30
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            buildConfigField "String", "BUILD_DATE", getBuildTime()
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            buildConfigField "String", "BUILD_DATE", getBuildTime()
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+
+private static String getBuildTime() {
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, yyyy, hh:mm a")
+    LocalDateTime now = LocalDateTime.now()
+    String dateTime = dtf.format(now)
+    return "\"${dateTime}\""
+}
+
+
+dependencies {
+
+
+    //google
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //exoplayer
+    //noinspection GradleDependency
+    implementation 'com.google.android.exoplayer:exoplayer:2.10.1'
+
+
+    //images
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+
+    //notifications
+    implementation 'androidx.work:work-runtime:2.6.0-alpha02'
+    implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'org.apache.commons:commons-text:1.8'
+
+
+    //other libraries
+    implementation 'com.github.ajalt.reprint:core:3.2.1@aar'
+    implementation 'com.thebluealliance:spectrum:0.7.1'
+    implementation 'com.aurelhubert:ahbottomnavigation:2.3.4'
+    implementation 'com.andrognito.pinlockview:pinlockview:2.1.0'
+
+
+    //others
+    //noinspection GradleDynamicVersion
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

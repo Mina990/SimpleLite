@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:weightSum="5"
+        android:gravity="bottom">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"
+            android:alpha="0.3"
+            app:cardBackgroundColor="@color/m_color"
+            app:cardElevation="0dp" />
+
+
+        <TextView
+            android:id="@+id/browser_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="@string/refresh"
+            android:textSize="15sp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_refresh"
+            android:drawableTint="@color/m_color"
+            android:background="?attr/selectableItemBackground" />
+
+
+        <TextView
+            android:id="@+id/browser_copy"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="@string/copy_url"
+            android:textSize="15sp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:drawableStart="@drawable/ic_copy"
+            android:textStyle="bold"
+            android:drawableTint="@color/m_color"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/browser_open"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="@string/open_in_browser"
+            android:textSize="15sp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:drawableStart="@drawable/ic_open_browser"
+            android:textStyle="bold"
+            android:drawableTint="@color/m_color"
+            android:background="?attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/browser_smart"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="Smart Pins"
+            android:textSize="15sp"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:drawableStart="@drawable/ic_pin_page"
+            android:textStyle="bold"
+            android:drawableTint="@color/m_color"
+            android:background="?attr/selectableItemBackground" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_restore_pins"
+        android:title="@string/restore_pins"
+        android:checkable="true"/>
+
+    <item
+        android:icon="@drawable/ic_delete_pin"
+        android:title="@string/delete_all"
+        android:checkable="true"/>
+
+
+    <item
+        android:icon="@drawable/ic_create_pin"
+        android:title="@string/create_pin"
+        android:checkable="true"/>
+</menu>

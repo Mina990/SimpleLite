@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/root_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/card_notifications"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent">
+
+                <TextView
+                    android:id="@+id/section_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_card"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="Smart Pins &amp; Favorites"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:id="@+id/section_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_one"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="Suggested"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:id="@+id/section_seven"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_two"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="People &amp; Friends"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/section_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_seven"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="Groups"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+                <!-- People section-->
+
+
+                <TextView
+                    android:id="@+id/section_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_three"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/pages"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/section_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_four"
+                    android:maxLines="1"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="8dp"
+                    android:text="Help &amp; Settings"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/card_five"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    android:gravity="start|center"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:text="Copyright 2017"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="12sp"
+                    android:visibility="invisible"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/profile_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ContentDescription" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="19dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/transparent"
+                            app:cardCornerRadius="0dp"
+                            app:cardElevation="0dp"
+                            app:contentPadding="0dp">
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_users"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:background="@android:color/transparent"
+                                android:clipToPadding="false"
+                                android:overScrollMode="never"/>
+
+                            <View
+                                android:id="@+id/liner"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.1dp"
+                                android:background="?attr/cardStrokes" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_users_other"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:background="@android:color/transparent"
+                                android:clipToPadding="false"
+                                android:overScrollMode="never"/>
+
+
+                            <RelativeLayout
+                                android:id="@+id/click_pro"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:padding="16dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:drawablePadding="30dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="@string/add_account"
+                                    android:textAppearance="?attr/textAppearanceListItem"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:drawableStartCompat="@drawable/ic_add_account"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+
+
+                            <RelativeLayout
+                                android:id="@+id/al"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:padding="16dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    app:drawableStartCompat="@drawable/ic_activity_fab"
+                                    android:drawablePadding="30dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="Activity Log"
+                                    android:textAppearance="?attr/textAppearanceListItem"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/down"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:padding="16dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    app:drawableStartCompat="@drawable/ic_download_fab"
+                                    android:drawablePadding="30dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="Downloads"
+                                    android:textAppearance="?attr/textAppearanceListItem"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_one"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/pins_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_smart_pins"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Smart Pins"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_favs"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:visibility="gone"
+                            android:scrollbars="none" />
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_two"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/suggest_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <ImageView
+                                android:id="@+id/messenger_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="30dp"
+                                android:gravity="center"
+                                android:src="@drawable/ic_games"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@+id/messenger_more"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Instant Games"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,RelativeOverlap" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/watch_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_fb_watch"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Videos On Watch"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/live_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_live"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Live Videos"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/market_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_market"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Marketplace"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/photos_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_pics"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/photos"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/saved_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_collections"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Saved"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/this_day_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                app:drawableStartCompat="@drawable/ic_on_this_day"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="On This Day"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                tools:ignore="HardcodedText" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/events_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                app:drawableStartCompat="@drawable/ic_cal"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/events"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_seven"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_seven"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/requests_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_friends_more"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Requests"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,RelativeOverlap" />
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/requests_badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:visibility="gone"
+                                app:cardBackgroundColor="@color/jorell_blue"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="1dp">
+
+                                <TextView
+                                    android:id="@+id/requests_badge_text"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:paddingStart="4dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingEnd="4dp"
+                                    android:paddingBottom="2dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="10sp"
+                                    tools:ignore="SmallSp" />
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/online_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_online"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/active_friends"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,RelativeOverlap" />
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_three"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/groups_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_group"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/groups"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/create_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_create_group"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Create New Group"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_four"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/pages_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_page"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="@string/pages"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,RelativeOverlap" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/create_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_create_page"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Create New Page"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/section_five"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:padding="20dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="?attr/cardStrokes"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <RelativeLayout
+                            android:id="@+id/face_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp"
+                            tools:ignore="TooManyViews">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_settings"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Facebook Settings"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/lang_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_lang"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Facebook Language"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText,TooManyViews" />
+
+                        </RelativeLayout>
+
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/as"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp"
+                            android:visibility="gone">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_help_center"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Help Center"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/privacy_more"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp"
+                            tools:ignore="TooManyViews">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_privacy_set"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Privacy Shortcuts"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+
+                        <RelativeLayout
+                            android:id="@+id/lo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:padding="16dp">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                app:drawableStartCompat="@drawable/ic_logout_fab"
+                                android:drawablePadding="30dp"
+                                android:ellipsize="end"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="Log Out"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/tabs_progress"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        tools:ignore="TooManyViews" />
+</RelativeLayout>

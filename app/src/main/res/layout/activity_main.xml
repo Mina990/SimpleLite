@@ -1,0 +1,187 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:soundEffectsEnabled="false"
+            tools:targetApi="lollipop">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginBottom="6dp"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:contentInsetLeft="0dp"
+                android:contentInsetStart="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                android:contentInsetRight="0dp"
+                android:contentInsetEnd="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetEnd="0dp"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:titleTextAppearance="@style/Toolbar.TitleText">
+
+                <FrameLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/lin_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="2dp"
+                        android:elevation="4dp"
+                        android:background="@drawable/search_bar_card"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="UselessParent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/toolbar_drawer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:elevation="0dp"
+                                android:src="@drawable/ic_fb_watch"
+                                android:contentDescription="videos on watch"
+                                app:tint="@color/m_color"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/toolbar_search"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toStartOf="@+id/toolbar_messages"
+                                android:layout_toEndOf="@+id/toolbar_drawer"
+                                android:ellipsize="end"
+                                android:gravity="start|center_vertical"
+                                android:maxLines="1"
+                                android:text="@string/app_name_pro"
+                                android:textColor="@color/search_color"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:titleTextAppearance="@style/Toolbar.TitleText"
+                                tools:ignore="RtlSymmetry" />
+
+
+                            <ImageView
+                                android:id="@+id/toolbar_messages"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="16dp"
+                                android:layout_toStartOf="@id/toolbar_market"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/ic_mess"
+                                tools:ignore="ContentDescription"
+                                android:contentDescription="@string/messages"/>
+
+                            <TextView
+                                android:id="@+id/friend_badge"
+                                style="@style/BadgeStyle"
+                                android:layout_alignTop="@+id/toolbar_messages"
+                                android:layout_alignEnd="@+id/toolbar_messages"
+                                android:visibility="invisible"
+                                tools:text="50" />
+
+
+                            <ImageView
+                                android:id="@+id/toolbar_market"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="16dp"
+                                android:background="?attr/selectableItemBackgroundBorderless"
+                                android:src="@drawable/ic_overflow"
+                                android:contentDescription="@string/more_options" />
+
+                            <TextView
+                                style="@style/BadgeStyleUpdate"
+                                android:layout_alignTop="@+id/toolbar_market"
+                                android:layout_alignEnd="@+id/toolbar_market"
+                                android:layout_marginTop="8dp"
+                                android:visibility="invisible"
+                                android:textAllCaps="true" />
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <com.creativetrends.simple.app.ui.CustomViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_above="@+id/bottom_navigation"/>
+
+
+            <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"/>
+
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <include layout="@layout/main_overflow" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="0.1dp"
+        android:layout_gravity="end"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:background="@color/transparent" />
+
+    <include layout="@layout/search_layout_main" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

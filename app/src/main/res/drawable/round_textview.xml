@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /**
+  ~  * Created by Jorell Rutledge on 1/12/19 3:18 PM
+  ~  * Copyright (c) 2019 . All rights reserved.
+  ~  * Last modified 1/12/19 3:18 PM
+  ~  */
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/md_red_500" />
+</shape>

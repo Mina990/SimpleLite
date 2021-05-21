@@ -1,0 +1,338 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppThemePhoto" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/dcP</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorEdgeEffect">@color/md_white_1000_25</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="cardColor">@color/card_darker</item>
+        <item name="cardStrokes">#151515</item>
+    </style>
+
+    <style name="FalconSettings" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/jorell_blue</item>
+        <item name="colorPrimaryDark">@color/jorell_blue_dark</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/jorell_blue</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:colorEdgeEffect">@color/md_white_1000_25</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/ps_gray</item>
+        <item name="overFlowColor">@color/overflow_lighter</item>
+        <item name="cardColor">@color/card_light</item>
+        <item name="diaColor">@color/white</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogThemeLight</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">@color/transparent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/jorell_blue</item>
+        <item name="colorPrimaryDark">@color/jorell_blue_dark</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/jorell_blue</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:colorEdgeEffect">@color/md_white_1000_25</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/ps_gray</item>
+        <item name="overFlowColor">@color/overflow_lighter</item>
+        <item name="cardColor">@color/card_light</item>
+        <item name="diaColor">@color/white</item>
+        <item name="cardPost">@color/card_light</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogThemeLight</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">@color/transparent</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+
+    <!-- Base application theme. -->
+    <style name="AppThemeDarkSettings" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/md_blue_grey_500</item>
+        <item name="colorPrimaryDark">@color/md_blue_grey_700</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="android:windowBackground">@color/dark</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:colorEdgeEffect">@null</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/m_color</item>
+        <item name="overFlowColor">@color/overflow_darker</item>
+        <item name="cardColor">@color/card_dark</item>
+        <item name="diaColor">@color/darcula</item>
+        <item name="cardPost">@color/darcula</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">#333333</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeBlack" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/dcP</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/black</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorEdgeEffect">@null</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/m_color</item>
+        <item name="overFlowColor">@color/overflow_darker</item>
+        <item name="cardColor">@color/card_darker</item>
+        <item name="diaColor">@color/black</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">#151515</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeBlackSettings" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/dcP</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/dcP</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:colorEdgeEffect">@null</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/m_color</item>
+        <item name="overFlowColor">@color/overflow_darker</item>
+        <item name="cardColor">@color/card_darker</item>
+        <item name="diaColor">@color/black</item>
+        <item name="cardPost">@color/black</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">#151515</item>
+    </style>
+
+    <style name="OneTap" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/jorell_blue</item>
+        <item name="colorPrimaryDark">@color/jorell_blue_dark</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/jorell_blue</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:colorEdgeEffect">@color/md_white_1000_25</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/m_color</item>
+        <item name="overFlowColor">@color/overflow_lighter</item>
+        <item name="cardColor">@color/card_light</item>
+        <item name="diaColor">@color/white</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogThemeLight</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">@color/transparent</item>
+    </style>
+
+
+    <style name="OneTapPop" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorPrimary">@color/jorell_blue</item>
+        <item name="colorPrimaryDark">@color/jorell_blue_dark</item>
+        <item name="colorAccent">@color/jorell_blue</item>
+        <item name="colorButtonNormal">@color/jorell_blue</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
+        <item name="android:colorEdgeEffect">@color/md_white_1000_25</item>
+        <item name="dialogCornerRadius">8dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="iconColor">@color/m_color</item>
+        <item name="overFlowColor">@color/overflow_lighter</item>
+        <item name="cardColor">@color/card_light</item>
+        <item name="diaColor">@color/white</item>
+        <item name="materialAlertDialogTheme">@style/AlertDialogThemeLight</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="cardStrokes">@color/transparent</item>
+    </style>
+
+
+    <style name="BadgeStyle" parent="@style/EllipsizedSingleLineTextView">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round_textview</item>
+        <item name="android:padding">0.2dp</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_marginTop">6.0dp</item>
+        <item name="android:layout_marginRight">-6.0dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
+
+    <style name="FacebookNotificationBarBadgeStyle" parent="@style/EllipsizedSingleLineTextView">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round_textview</item>
+        <item name="android:padding">0.3dp</item>
+        <item name="android:layout_width">@dimen/facebook_notification_bar_bedge_size</item>
+        <item name="android:layout_height">@dimen/facebook_notification_bar_bedge_size</item>
+        <item name="android:layout_marginTop">-2dp</item>
+        <item name="android:layout_marginRight">1dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+
+    </style>
+
+    <style name="BadgeStyleUpdate" parent="@style/EllipsizedSingleLineTextView">
+        <item name="android:textSize">8.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round_textview_update</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">6.0dp</item>
+        <item name="android:layout_marginRight">-4.0dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
+
+    <style name="UserStyle" parent="@style/EllipsizedSingleLineTextView">
+        <item name="android:textSize">9.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round_textview_user</item>
+        <item name="android:padding">0.2dp</item>
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
+        <item name="android:layout_marginTop">-6.0dp</item>
+        <item name="android:layout_marginRight">-2.0dp</item>
+        <item name="android:elevation">1dp</item>
+    </style>
+
+    <style name="EllipsizedSingleLineTextView">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">16sp</item>
+        <item name="closeIcon">@android:color/transparent</item>
+        <item name="android:closeIcon">@android:color/transparent</item>
+        <item name="android:editTextColor">@color/m_color</item>
+        <item name="android:textColorHint">@color/m_color</item>
+        <item name="android:fontFamily">@font/manrope</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BottomSheetDialog_Rounded" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="BottomSheetDialog_Rounded_Light" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/round_card_drawable</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/jorell_blue</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/jorell_blue</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NeutralButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/jorell_blue</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AlertDialogThemeLight" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+    </style>
+
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">#212121</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+    </style>
+
+</resources>

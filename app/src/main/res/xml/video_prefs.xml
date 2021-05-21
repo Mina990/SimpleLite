@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/video_settings_title"
+        android:key="v_c">
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="close_video"
+            android:summary="When enabled the video player will close automatically when the video finishes."
+            android:title="Auto Close Video Player" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="replay_video"
+            android:summary="Replay videos after they have finished."
+            android:title="Auto Replay" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="always_show"
+            android:summary="When enabled the video player will not hide it\'s controls and toolbar."
+            android:title="Always Show Controls" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="play_mute"
+            android:summary="When enabled Simple will play videos muted when opened. Tap the volume icon to enable audio."
+            android:title="Start Video Muted" />
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+
+</PreferenceScreen>

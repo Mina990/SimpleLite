@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Simple Lite</string>
+    <string name="app_name_pro" translatable="false">Simple Lite</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="share_action">Share current page</string>
+    <string name="error">Error</string>
+    <string name="fragment_main_downloading">Downloading&#8230;</string>
+    <string name="terms_settings">Terms of Service</string>
+    <string name="settings_more">More</string>
+    <string name="update_share">Share Now</string>
+    <string name="my_pins_search">Search your smart pins</string>
+    <string name="faved">Pins</string>
+    <string name="groups">Groups</string>
+    <string name="pages">Pages</string>
+    <string name="photos">Photos</string>
+    <string name="events">Events</string>
+    <string name="onthisday">On This Day</string>
+
+    <string name="news_feed_preferences">Facebook Preferences</string>
+
+    <string name="search">Search Facebook</string>
+    <string name="notification_summary">Enable to receive notifications.</string>
+    <string name="notifications_title">General Notifications</string>
+    <string name="notifications_enabled">Enable Notifications</string>
+
+
+    <string name="people_you_hint">Hide People You May Know</string>
+    <string name="no_images">Disable Images</string>
+
+    <string name="your_pin">Your 4-digit lock code:</string>
+    <string name="your_pin_message">Your 4-digit lock code has been encrypted and saved. Please note: if you forget your 4-digit lock code you must clear Simple\'s data from your devices settings menu.</string>
+
+    <string name="activate_messages">Message Notifications</string>
+    <string name="notification_sound">Notification Sound</string>
+
+    <string name="message_sound">Message Notification Sound</string>
+    <string name="silent">No Sound</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="led_light">Notification LED</string>
+    <string name="simple_lock">Enable Simple Lock</string>
+    <string name="lock_text_new">Secure Simple Lite with a 4-digit pin code.</string>
+
+
+
+    <string name="context_share_image">Share Image</string>
+    <string name="context_copy_image_link">Copy link</string>
+
+    <string name="context_share_image_progress">Preparing&#8230;</string>
+    <string name="content_copy_link_done">Link copied to clipboard</string>
+    <string name="permission_denied">Permission denied. This action cannot be completed.</string>
+    <string name="remove_pin">Remove Pin?</string>
+
+
+    <string name="rename_title">Rename this pin</string>
+    <string name="rename_message">Type a new name for this pin.</string>
+    <string name="sent_a_message">%s sent a message.</string>
+    <string name="eula_string" translatable="false">Copyright 2016 - %d Creative Trends LLC. All Rights Reserved.
+
+\n\nThis software may not, in whole or in any part, be copied, reproduced, transmitted, translated (into any
+language, natural or computer), stored in a retrieval system, reduced to any electronic medium or machine readable
+format, or by any other form or means without prior consent, in writing, from Creative Trends.
+
+\n\nYou are granted a limited license to use this software. The software may be used only in accordance
+with the terms of the license, which is described in the following paragraphs.
+
+\n\nTRADEMARKS:
+\n\nSimple for Facebook, NewsBite, Creative Trends, Creative Trends Apps LLC. All Creative Trends logos, artwork and apps made or produced by Creative Trends.
+
+\n\nLICENSE:
+\n\n\"THE SOFTWARE\" shall be taken to mean the software contained in this app and any subsequent versions
+or upgrades received as a result of having purchased this app. \"BUYER\" shall be taken as the original
+purchaser of the software.
+
+\n\nBuyer has the non-exclusive right to the use of software only on a single device. Buyer may not electronically
+transfer the program from one device to another over any type of network. Buyer may not distribute copies
+of the software or the accompanying documentation to others either for a fee or without charge. Buyer may not modify
+or translate the program or documentation. User may not disassemble the program or allow it to be disassembled
+into its constituent source code. Buyer\'s use of the software indicates his/her acceptance of these terms
+and conditions. If buyer does not agree to these conditions, return the distribution media, documentation, and
+associated materials to the vendor from whom the software was purchased, and/or uninstall the software from the device,
+and erase the software from any and all storage devices upon which it may have been installed.
+
+\n\nThis license agreement shall be governed by the laws of The United States of America, New Jersey and
+shall inure to the benefit of Creative Trends or its assigns.
+
+\n\nREFUNDS:
+\n\nCreative Trends will grant the buyer of any of our apps a full refund of their purchase at our sole discretion.
+
+\n\nCHANGES:
+\n\nYou agree that Creative Trends has the right to test and/or remove features at it\'s discretion without further notice to you.
+
+\n\nAPP BACKUPS:
+\n\nYou are granted the option to download and install this application from the original source of first download/purchase. You may not use any service to back up this application. Using a backup service will invalidate your license.
+
+\n\nUSAGE:
+\n\nCreative Trends reserves the right to terminate your usage of this app at anytime.
+
+\n\nDISCLAIMER / LIMITATION OF LIABILITY:
+\n\nUser acknowledges that the software may not be free from defects and may not satisfy all user\'s
+needs. The software and any accompanying written materials are licensed \"AS IS\". Buyer\'s exclusive
+remedy during the warranty period (if any) shall be fixes via software updates if needed. In no event will Creative Trends be liable for direct, indirect, incidental or consequential damage or
+damages resulting from loss of use, or loss of anticipated profits resulting from any defect in the software,
+even if it has been advised of the possibility of such damage. Some laws do not allow exclusion or limitation
+of implied warranties or liabilities for incidental or consequential damages, so the above limitations or
+exclusion may not apply.
+
+\n\nSPECIFIC RESTRICTIONS:
+\n\nThe software may not be provided by a \"Backup Service\" or any other vendor
+which Creative Trends has no relationship with.
+\n\nThe software may not be reverse engineered.</string>
+    <string name="copy_right">\u00A9 %d Creative Trends Apps LLC.</string>
+    <string name="save_img">Save</string>
+
+    <string name="policy_about" translatable="false">
+    <![CDATA[<b>WHAT DO WE DO WITH YOUR INFORMATION?</b><br><br>
+    Nothing!<br><br>
+    Your data is your data. We Do not. Will not and have never collected your data.]]>
+    </string>
+
+    <string name="download_manager_disabled">Download Manager Disabled</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="no_images_hint_new">Disable images on mobile data to save on data usage. Images will load normally on WiFi.</string>
+    <string name="saved_pin_message">If you forget your pin, please clear Simple\'s data from your phones application manager.</string>
+    <!-- END OF LICENSES -->
+
+
+    <string name="open_in_browser">Open in browser</string>
+
+
+    <string name="copy_url">Copy link</string>
+
+
+    <string name="download">Download</string>
+    <string name="auto_night_title">Auto Night Theme</string>
+
+    <string name="context_share_video">Share Video</string>
+
+    <!-- Simple Free String Specific -->
+
+
+    <string name="most_recent">Most Recent</string>
+    <string name="color_navigation">Color Navigation Bar</string>
+    <string name="color_status_bar">Color Status Bar</string>
+
+    <string name="not_supported">Your device doesn\'t support this feature.</string>
+
+    <string name="enable_color">Enable to color the navigation bar to match your accent color.</string>
+
+    <string name="enable_color_status">Enable to color the status bar to match your accent color.</string>
+
+    <string name="add_to_pins">Add to pins</string>
+    <string name="top_stories">Top Stories</string>
+    <string name="notifications">Notifications</string>
+    <string name="messages">Messages</string>
+    <string name="pin_code_step_enter">Enter your 4-digit pin.</string>
+    <string name="pin_code_step_create">Create a 4-digit pin.</string>
+    <string name="pin_code_step_confirm">Confirm your 4-digit pin.</string>
+    <string name="pin_code_step_disable">Disable your 4-digit pin.</string>
+    <string name="top_news_first_title">Load Top Stories First</string>
+    <string name="top_news_first_sum">When enabled Top Stories will be loaded in the first tab, while Most Recent will be loaded in the second tab.</string>
+    <string name="image_downloaded">Image downloaded</string>
+    <string name="loading">Loading</string>
+    <string name="none_matching">4-digit pin does not match.</string>
+    <string name="welcome_night_new">Good evening!</string>
+    <string name="welcome_day_new">Good morning!</string>
+    <string name="welcome_afternoon_new">Good afternoon!</string>
+    <string name="welcome_general_new">Welcome back!</string>
+    <string name="error_occurred_explanation">An unexpected error occurred.\nSorry for the inconvenience. Please send us this bug report so that we can investigate the cause.</string>
+    <string name="error_activity_restart_app">Restart app</string>
+
+
+    <!-- error -->
+
+    <string name="error_activity_close_app">Close app</string>
+    <string name="error_activity_error_details">Error details</string>
+    <string name="error_activity_error_details_title">Stack trace</string>
+    <string name="error_activity_error_details_close">Close</string>
+    <string name="error_activity_error_details_send">Send report</string>
+    <string name="please_seconds">Please wait %d seconds.</string>
+    <string name="attempts_left">Pin code incorrect. You have, %d attempt(s) left.</string>
+    <string name="news_feed">News Feed</string>
+    <string name="active_friends">Active Friends</string>
+    <string name="open_external">Open External Links With</string>
+    <string name="are_you_sure">Are you sure you would like to remove: \"%s\", from your pins? This action cannot be undone.</string>
+    <string name="are_you_sure_remove">Would you like to remove all %s of your pins? This action cannot be undone.</string>
+    <string name="are_you_sure_remove_single">Are you sure you would like to remove this pin? This cannot be undone.</string>
+    <string name="reset_all_message">Would you like to reset all pins to the default pins list? Resetting pins deletes all of your current pins. Resetting your pins cannot be undone.</string>
+    <string name="reset_all_pins">Reset All Pins?</string>
+    <string name="lock_tabs_sum">Lock Tabs</string>
+    <string name="lock_tabs_title">When enabled bottom tabs will be locked in place. Disable to hide tabs on scroll.</string>
+    <string name="tab_labels_title">Show Tab Titles</string>
+    <string name="tab_labels_sum">Enable to show tab titles. Disable to hide them.</string>
+    <string name="see_more_results">See more results for %s</string>
+    <string name="forgot_pass">Forgot?</string>
+    <string name="thumb" translatable="false">&#x1f44d;</string>
+    <string name="choose_image_video">Select image or video</string>
+    <string name="downloader">%s Download Manager</string>
+    <string name="tap_to_view">Tap to view</string>
+    <string name="file_downloaded">File downloaded</string>
+    <string name="notification_widget_channel" translatable="false">com.creativetrends.simple.app.lite.downloader</string>
+    <string name="notifications_widget">Simple Lite Downloader</string>
+
+
+
+    <string name="notification_reg_channel" translatable="false">com.creativetrends.simple.app.lite.notifications</string>
+    <string name="channel_description">Notification settings for Simple Lite Facebook notifications.</string>
+    <string name="notification_mess_channel" translatable="false">com.creativetrends.simple.app.lite.messages</string>
+    <string name="notification_reg">Simple Lite Notifications</string>
+    <string name="notification_mess">Simple Lite Messages</string>
+    <string name="mess_description">Notification settings for Simple Lite message notifications.</string>
+    <string name="message_channel_settings">Message Notification Channel Settings</string>
+    <string name="notification_channel_settings">Notification Channel Settings</string>
+    <string name="notification_channel_sum">Setup settings for your preferred notification sound, LED, vibration and importance.</string>
+    <string name="message_channel_sum">Setup settings for your preferred message notification sound, LED, vibration and importance.</string>
+
+    <string name="notifications_widget_description">Simple Lite Downloader settings</string>
+    <string name="list_empty">Nothing in Pins</string>
+    <string name="add_account">Add another account</string>
+    <string name="manage_facebook_settings">Manage Facebook settings</string>
+    <string name="swipe_tabs_title">Swipe Between Tabs</string>
+    <string name="swipe_tabs_summary">Enable to swipe between tabs.</string>
+    <string name="whats_on">What\'s on your mind?</string>
+    <string name="update_status">Post</string>
+    <string name="update_photo">Photo/Video</string>
+    <string name="checkin">Check In</string>
+
+    <string name="browser_settings_sum">Adjust how to open links. Adjust Popup View.</string>
+    <string name="browser_settings_title">Browsing Settings</string>
+    <string name="customize_settings_sum">"Choose Simple Lite\'s accent and app colors. Tint your navigation bar, and turn on Auto Night Mode.</string>
+    <string name="customize_settings_title">"Customization Settings</string>
+
+    <string name="facebook_settings_sum">"Remove 'People You May Know'. Choose your feed preference.</string>
+    <string name="facebook_settings_title">"Facebook Settings</string>
+
+    <string name="notification_settings_sum">Enable or disable settings for general notifications and messages. Adjust sync interval.</string>
+    <string name="notification_settings_title">"Notification Settings</string>
+
+    <string name="privacy_settings_sum">"Enable or disable Simple Lock. Enable location for check-ins.</string>
+    <string name="privacy_settings_title">"Privacy Settings</string>
+
+    <string name="tab_settings_sum">"Disable tab labels. Lock tabs in position. Swipe between tabs.</string>
+    <string name="tab_settings_title">"Tab Settings</string>
+
+    <string name="about">About</string>
+
+    <string name="crash_settings_sum">When enabled you will have the option to send a crash report. An app restart will be required to activate this option.</string>
+    <string name="crash_settings_title">Crash Reporting</string>
+
+    <string name="rate_settings_sum">Help others enjoy Simple Lite by rating the app on Google Play.</string>
+    <string name="rate_settings_title">Rate Simple Lite</string>
+
+    <string name="terms_settings_title">Terms of Use</string>
+
+    <string name="popup_settings_sum">Long press items to view them without leaving the content you are viewing.</string>
+    <string name="popup_settings_title">Popup View</string>
+    <string name="switching_to_other">Switching accounts</string>
+    <string name="switching_to">Switching to, %s.</string>
+    <string name="switch_to_account">Switch to this account</string>
+
+    <string name="added_to_pins">Added: %s to your pins.</string>
+    <string name="settings">Settings</string>
+    <string name="view_your">View your profile</string>
+    <string name="close">Close</string>
+    <string name="market_place">Marketplace</string>
+    <string name="active_online">Active friends</string>
+    <string name="mark_all_read">Mark all read</string>
+    <string name="notify_settings">Notification settings</string>
+    <string name="video_downloaded">Video downloaded</string>
+
+    <string name="facebook_status">Facebook Status</string>
+    <string name="facebook_status_sum">Tap here to check Facebook\'s current status. This checks for issues or outages.</string>
+    <string name="current_status_mention"><![CDATA[Site status from: <b><u>%s</u></b>]]></string>
+    <string name="current_status_results">Disclaimer: these results are generated from the current status from the site listed above. These results are not monitored or maintained by Creative Trends Apps LLC and can change at anytime.</string>
+    <string name="problems">Problems at Facebook</string>
+    <string name="possible">Possible problems at Facebook</string>
+    <string name="no_issues">No problems at Facebook</string>
+    <string name="current_status_issues">Current issues:</string>
+    <string name="most_reported">Most reported problems:</string>
+    <string name="update_app_sum">%s recommends that you update to the latest version (%s). Updates include improvements and bug fixes. Tap update to open the Play Store.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="home">Home</string>
+    <string name="discover_group">Discover</string>
+    <string name="create_new_group">Create New Group</string>
+    <string name="create_pin">Create Pin</string>
+    <string name="delete_all">Delete All</string>
+    <string name="restore_pins">Restore Defaults</string>
+    <string name="top_tabs_sum_new">Enable to move the main tabs to the top of the screen. When enabled locking tabs will be disabled as well as showing tab titles. Panels will be hidden while enabled. Panel options will be available in the overflow menu (3 dots).</string>
+    <string name="top_tabs_title">Tabs On Top</string>
+
+    <string name="videos">Videos</string>
+
+    <string name="video_settings_sum">Auto close video player. Auto replay video. Always show controls.</string>
+    <string name="video_settings_title">Video Settings</string>
+    <string name="error_with_url">Error with video URL.</string>
+    <string name="pokes">Pokes</string>
+    <string name="my_pin_items">Smart pins</string>
+    <string name="live_feed_ended">Live video has ended.</string>
+    <string name="more_options">More options</string>
+    <string name="update_available_text">Version %s is now available</string>
+    <string name="update_available">Update Available</string>
+    <string name="new_post">New Post</string>
+    <string name="video_name">Floating Video Service</string>
+    <string name="video_description">Floating Video Service for Simple</string>
+    <string name="photo_options">Photo Options</string>
+    <string name="video_options">Video Options</string>
+    <string name="logged_out">Logged out</string>
+
+    <string name="delete">Delete?</string>
+    <string name="delete_message">Are you sure you would like to delete %s from your device? This cannot be undone.</string>
+    <string name="removed_from_downloads">Removed %s from your device.</string>
+    <string name="sizer_size">Using %s of %s</string>
+
+
+    <string name="create_smart">Create Smart Pin</string>
+    <string name="create_smart_message">Enter a name and url for your custom Smart Pin.</string>
+    <string name="pin_name">Pin name</string>
+    <string name="enter_url">Enter url: ex. https://google.com</string>
+    <string name="refresh">Refresh</string>
+
+    <string-array name="pref_theme_fb_entries">
+        <item>Light Theme</item>
+        <item>Dark Theme</item>
+        <item>Black Theme</item>
+    </string-array>
+    <string-array name="browser_choice">
+        <item>In App Browser</item>
+        <item>External Browser</item>
+    </string-array>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory android:title="Notification Settings">
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="enable_notifications"
+            android:summary="@string/notification_summary"
+            android:title="@string/notifications_enabled" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="true"
+            android:dependency="enable_notifications"
+            android:key="notifications_activated"
+            android:title="@string/notifications_title" />
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="true"
+            android:dependency="enable_notifications"
+            android:key="messages_activated"
+            android:title="@string/activate_messages" />
+
+
+
+
+        <com.creativetrends.simple.app.preferences.RingtonePreferenceCompat
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="notifications_activated"
+            android:key="ringtone"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:summary="%s."
+            android:title="@string/notification_sound" />
+
+        <com.creativetrends.simple.app.preferences.RingtonePreferenceCompat
+            android:defaultValue="content://settings/system/notification_sound"
+            android:dependency="messages_activated"
+            android:key="ringtone_msg"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:summary="%s."
+            android:title="@string/message_sound" />
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="vibrate"
+            android:summary="Enable or disable notification vibration."
+            android:title="@string/vibrate" />
+
+
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="led_light"
+            android:summary="Enable or disable notification LED."
+            android:title="@string/led_light" />
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+</PreferenceScreen>

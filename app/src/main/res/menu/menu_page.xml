@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <item
+        android:id="@+id/page_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+
+    <item
+        android:id="@+id/page_share"
+        android:icon="@drawable/ic_share_now"
+        android:title="@string/share_action"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction" />
+
+
+    <item
+        android:id="@+id/page_copy"
+        android:icon="@drawable/ic_copy"
+        android:title="Copy to clipboard"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/page_open"
+        android:icon="@drawable/ic_open_browser"
+        android:title="Open in browser"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/onepage__pins"
+        android:icon="@drawable/ic_pin_page"
+        android:title="@string/my_pin_items"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/page_pin"
+        android:icon="@drawable/ic_circle"
+        android:title="Add to pins"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/page_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+
+</menu>

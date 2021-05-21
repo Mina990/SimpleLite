@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/notifications_enabled">
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="enable_notifications"
+            android:summary="@string/notification_summary"
+            android:title="@string/notifications_enabled" />
+
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/notifications">
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="true"
+            android:dependency="enable_notifications"
+            android:key="notifications_activated"
+            android:title="@string/notifications_title" />
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:dependency="notifications_activated"
+            android:key="notif_channel"
+            android:summary="@string/notification_channel_sum"
+            android:title="@string/notification_channel_settings" />
+
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/messages">
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="true"
+            android:dependency="enable_notifications"
+            android:key="messages_activated"
+            android:title="@string/activate_messages" />
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:dependency="messages_activated"
+            android:key="mess_channel"
+            android:summary="@string/message_channel_sum"
+            android:title="@string/message_channel_settings" />
+
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+
+
+</PreferenceScreen>

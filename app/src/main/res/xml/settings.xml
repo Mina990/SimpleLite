@@ -1,0 +1,129 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_browser_settings"
+        android:key="browse_key"
+        android:summary="@string/browser_settings_sum"
+        android:title="@string/browser_settings_title" />
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_customize_settings"
+        android:key="customize_key"
+        android:summary="@string/customize_settings_sum"
+        android:title="@string/customize_settings_title" />
+
+    <Preference
+        android:layout="@layout/preference_layout"
+        android:selectable="false"
+        android:title="divider" />
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_facebook_settings"
+        android:key="facebook_key"
+        android:summary="@string/facebook_settings_sum"
+        android:title="@string/facebook_settings_title" />
+
+    <Preference
+        android:layout="@layout/preference_layout"
+        android:selectable="false"
+        android:title="divider" />
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_notification_settings"
+        android:key="notifications_key"
+        android:summary="@string/notification_settings_sum"
+        android:title="@string/notification_settings_title" />
+
+    <Preference
+        android:layout="@layout/preference_layout"
+        android:selectable="false"
+        android:title="divider" />
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_privacy_settings"
+        android:key="privacy_key"
+        android:summary="@string/privacy_settings_sum"
+        android:title="@string/privacy_settings_title" />
+
+    <Preference
+        android:layout="@layout/preference_layout"
+        android:selectable="false"
+        android:title="divider" />
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_tab_settings"
+        android:key="tabs_key"
+        android:summary="@string/tab_settings_sum"
+        android:title="@string/tab_settings_title" />
+
+    <Preference
+        android:layout="@layout/preference_layout"
+        android:selectable="false"
+        android:title="divider" />
+
+
+    <com.creativetrends.simple.app.preferences.Preference
+        android:icon="@drawable/ic_video_settings"
+        android:key="vid"
+        android:summary='@string/video_settings_sum'
+        android:title="@string/video_settings_title" />
+
+
+    <com.creativetrends.simple.app.preferences.PreferenceCategory
+        android:title="@string/about">
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="check_status"
+            android:summary="@string/facebook_status_sum"
+            android:title="@string/facebook_status" />
+
+
+
+        <com.creativetrends.simple.app.preferences.CustomSwitchPreference
+            android:defaultValue="false"
+            android:key="enable_crash"
+            android:summary="@string/crash_settings_sum"
+            android:title="@string/crash_settings_title" />
+
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="version_number"
+            android:title="Version Name"/>
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="version_code"
+            android:title="Version Code"/>
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="version_type"
+            android:title="Build Type"/>
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="version_date"
+            android:title="Build Date"/>
+
+
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="privacy"
+            android:summary="Simple Lite\'s privacy policy."
+            android:title="@string/privacy_policy" />
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="terms"
+            android:summary="Simple Lite\'s terms of use."
+            android:title="@string/terms_settings_title" />
+
+        <com.creativetrends.simple.app.preferences.Preference
+            android:key="rate_simple"
+            android:summary="@string/rate_settings_sum"
+            android:title="@string/rate_settings_title" >
+            <intent android:action="android.intent.action.VIEW"
+                android:data="market://details?id=com.creativetrends.simple.app.lite" />
+        </com.creativetrends.simple.app.preferences.Preference>
+
+
+
+    </com.creativetrends.simple.app.preferences.PreferenceCategory>
+</PreferenceScreen>
