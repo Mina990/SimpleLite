@@ -46,6 +46,7 @@
 
 
             <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/exo_rew"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:padding="6dp"
                 android:layout_width="0dp"
@@ -68,6 +69,7 @@
                 android:layout_weight="1"/>
 
             <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/exo_ffwd"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:padding="6dp"
                 android:layout_width="0dp"
