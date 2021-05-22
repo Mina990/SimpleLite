@@ -92,6 +92,9 @@
                     android:alpha="0.9"
                     android:src="@drawable/ic_edit"
                     android:contentDescription="@string/update_status"
+                    app:backgroundTint="@color/new_facebook"
+                    app:tint="@null"
+                    app:rippleColor="@color/new_facebook"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini"/>
@@ -127,6 +130,9 @@
                     android:alpha="0.9"
                     android:src="@drawable/ic_pics_sheet"
                     android:contentDescription="@string/update_photo"
+                    app:backgroundTint="@color/p_green"
+                    app:tint="@null"
+                    app:rippleColor="@color/p_green"
                     app:borderWidth="0dp"
                     app:elevation="0dp"
                     app:fabSize="mini" />
@@ -162,7 +168,13 @@
                     android:layout_marginBottom="26dp"
                     android:alpha="0.9"
                     android:src="@drawable/ic_check"
-                    android:contentDescription="@string/checkin" />
+                    android:contentDescription="@string/checkin"
+                    app:backgroundTint="@color/janae_pink"
+                    app:tint="@null"
+                    app:rippleColor="@color/janae_pink"
+                    app:borderWidth="0dp"
+                    app:elevation="0dp"
+                    app:fabSize="mini"/>
 
 
                 <TextView
