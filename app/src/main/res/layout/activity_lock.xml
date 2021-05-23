@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorPrimaryDark"
+    android:isScrollContainer="true"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
     android:scrollbars="none">
@@ -22,11 +24,11 @@
             android:layout_height="84dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp"
-            android:elevation="4dp"
+            android:elevation="2dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_facebook"
             app:civ_border_color="@color/transparent"
-            app:civ_border_width="2.5dp"
+            app:civ_border_width="0dp"
             tools:ignore="ContentDescription" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -92,20 +94,13 @@
             android:layout_below="@+id/indicator_dots"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:soundEffectsEnabled="true"
+            app:keypadVerticalSpacing="20dp"
             app:keypadButtonSize="72dp"
             app:keypadDeleteButtonSize="25dp"
             app:keypadShowDeleteButton="true"
             app:keypadTextColor="?android:textColorPrimary"
-            app:keypadTextSize="24dp" />
+            app:keypadTextSize="30dp"/>
 
-        <View
-            android:id="@+id/lock_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/transparent"
-            android:soundEffectsEnabled="false"
-            android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/pin_code_lock_imageview"
@@ -113,10 +108,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="?attr/actionBarSize"
             android:src="@drawable/ic_lock_settings"
             android:tint="?android:textColorPrimary"
+            android:paddingBottom="16dp"
             tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/lock_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:soundEffectsEnabled="false"
+            android:visibility="gone"/>
+
 
 
     </RelativeLayout>
