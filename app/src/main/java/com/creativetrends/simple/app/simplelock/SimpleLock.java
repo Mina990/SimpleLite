@@ -63,6 +63,7 @@ public class SimpleLock extends AppCompatActivity {
     CountDownTimer cTimer = null;
     View lock_click;
     String from;
+    boolean MenuLight;
 
     private final PinLockListener mPinLockListener = new PinLockListener() {
 
@@ -143,18 +144,59 @@ public class SimpleLock extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
         setUp();
-        simplewhite = PreferencesUtility.getInstance(this).getTheme().equals(DXDecryptorlaLlEVmT.decode("kubwRFeH9c838bc=")/*"simplewhite"*/);
+        MenuLight = PreferencesUtility.getInstance(this).getFreeTheme().equals("materialtheme");
         setContentView(R.layout.activity_lock);
         lock_click = findViewById(R.id.lock_view);
         lock_click.setSoundEffectsEnabled(false);
         lock_click.setOnClickListener(v -> Log.i("User", "Clicking"));
         splash = findViewById(R.id.scroll);
-        if (preferences.getBoolean(DXDecryptorlaLlEVmT.decode("gPrpW2SM68A28Q==")/*"auto_night"*/, false) && ThemeUtils.isNightTime()) {
-            splash.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
-        } else {
-            splash.setBackgroundColor(ThemeUtils.getColorPrimary(this));
-        }
         splash.scrollTo(0, 0);
+        if (PreferencesUtility.getBoolean("color_splash", false)) {
+            if (PreferencesUtility.getBoolean("auto_night", false) && ThemeUtils.isNightTime()) {
+                getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.black));
+                getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
+                splash.setBackgroundColor(ContextCompat.getColor(this, R.color.black));
+            } else if (MenuLight && !ThemeUtils.isNightTime()) {
+                getWindow().setStatusBarColor(ThemeUtils.getColorPrimaryDark());
+                getWindow().setNavigationBarColor(ThemeUtils.getColorPrimaryDark());
+                splash.setBackgroundColor(ThemeUtils.getColorPrimaryDark());
+            } else if (!MenuLight) {
+                getWindow().setStatusBarColor(StaticUtils.darkColorTheme(ThemeUtils.getColorPrimaryDark()));
+                getWindow().setNavigationBarColor(StaticUtils.darkColorTheme(ThemeUtils.getColorPrimaryDark()));
+                splash.setBackgroundColor(StaticUtils.darkColorTheme(ThemeUtils.getColorPrimaryDark()));
+
+            }
+        } else {
+            splash.setBackgroundColor(setToolbarColor(this));
+            if (PreferencesUtility.getBoolean("auto_night", false) && ThemeUtils.isNightTime()) {
+                getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.black));
+            } else if (MenuLight && !ThemeUtils.isNightTime()) {
+                if (StaticUtils.isMarshmallow()) {
+                    getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.white));
+                    ThemeUtils.setLightStatusBar(this);
+                } else {
+                    getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.light_nav));
+                }
+            } else if (!MenuLight) {
+                getWindow().setStatusBarColor(setToolbarColor(this));
+            }
+            if (PreferencesUtility.getBoolean("auto_night", false) && ThemeUtils.isNightTime()) {
+                getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.black));
+            } else if (MenuLight && !ThemeUtils.isNightTime()) {
+                if (StaticUtils.isOreo()) {
+                    getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.white));
+                    ThemeUtils.setLightNavigationBar(this);
+                } else {
+                    getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.light_nav));
+                }
+            } else if (!MenuLight) {
+                getWindow().setNavigationBarColor(setToolbarColor(this));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    getWindow().setNavigationBarDividerColor(ThemeUtils.getTheme(this));
+                }
+            }
+        }
+
         name = findViewById(R.id.lock_name_new);
         message = findViewById(R.id.pin_code_step_textview);
         lockIcon = findViewById(R.id.pin_code_lock_imageview);
@@ -351,6 +393,25 @@ public class SimpleLock extends AppCompatActivity {
     void cancelTimer() {
         if (cTimer != null)
             cTimer.cancel();
+    }
+
+
+
+    private int setToolbarColor(Context context) {
+        if (PreferencesUtility.getBoolean("auto_night", false) && ThemeUtils.isNightTime()) {
+            return ContextCompat.getColor(context, R.color.black);
+        } else {
+            switch (PreferencesUtility.getInstance(context).getFreeTheme()) {
+                case "draculatheme":
+                    return ContextCompat.getColor(context, R.color.darcula);
+                case "darktheme":
+                case "amoledtheme":
+                    return ContextCompat.getColor(context, R.color.black);
+                default:
+                    return ContextCompat.getColor(context, R.color.white);
+            }
+
+        }
     }
 
 }
