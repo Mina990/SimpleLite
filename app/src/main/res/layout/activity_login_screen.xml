@@ -8,16 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:background="@color/new_facebook"
+        android:background="?android:attr/windowBackground"
         tools:ignore="ContentDescription" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#20000000">
-    </View>
-
-
+   
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,11 +25,12 @@
             android:layout_weight="1"
             android:layout_gravity="center_vertical">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="bottom|center_horizontal"
                 android:src="@drawable/ic_launcher_s"
+                android:tint="@color/jorell_blue_dark"
                 tools:ignore="ContentDescription" />
         </FrameLayout>
 
@@ -51,10 +46,11 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:text="Welcome to Simple Lite"
-                android:textColor="@android:color/white"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -76,7 +72,7 @@
                 android:alpha="0.7"
                 android:gravity="center"
                 android:text="By continuing you agree to our "
-                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -88,7 +84,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Privacy Policy"
-                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:maxLines="1"
@@ -102,7 +98,7 @@
                 android:alpha="0.7"
                 android:gravity="center"
                 android:text=" &amp; "
-                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="12sp"
                 tools:ignore="HardcodedText" />
 
@@ -113,7 +109,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Terms."
-                android:textColor="@android:color/white"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 android:maxLines="1"
@@ -138,7 +134,7 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="8dp"
                 app:contentPadding="10dp"
-                app:cardBackgroundColor="@color/new_facebook"
+                app:cardBackgroundColor="@color/jorell_blue_dark"
                 app:cardElevation="4dp">
 
 
@@ -179,8 +175,9 @@
                     android:clickable="false"
                     android:paddingBottom="10dp"
                     android:textAllCaps="false"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"/>
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:textSize="14sp"
+                    tools:text="ghghjghgjg"/>
             </FrameLayout>
 
         </FrameLayout>
