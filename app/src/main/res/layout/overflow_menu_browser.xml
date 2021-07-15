@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/browser_menu_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sim_menu"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:soundEffectsEnabled="false"
+        android:visibility="gone"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp">
+
+
+        <LinearLayout
+            android:id="@+id/post_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/browser_copy"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:drawablePadding="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/copy_url"
+                android:textSize="15sp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:drawableStart="@drawable/ic_copy"
+                android:textStyle="bold"
+                app:drawableTint="@color/m_color"
+                android:background="?attr/selectableItemBackground" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/browser_open"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:drawablePadding="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/open_in_browser"
+                android:textSize="15sp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:drawableStart="@drawable/ic_open_browser"
+                android:textStyle="bold"
+                app:drawableTint="@color/m_color"
+                android:background="?attr/selectableItemBackground" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/browser_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:drawablePadding="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/refresh"
+                android:textSize="15sp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textStyle="bold"
+                android:drawableStart="@drawable/ic_refresh"
+                app:drawableTint="@color/m_color"
+                android:background="?attr/selectableItemBackground" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/browser_smart"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:drawablePadding="16dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="Smart Pins"
+                android:textSize="15sp"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:drawableStart="@drawable/ic_pin_page"
+                android:textStyle="bold"
+                app:drawableTint="@color/m_color"
+                android:background="?attr/selectableItemBackground"
+                tools:ignore="HardcodedText" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
