@@ -28,7 +28,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:contentInsetStart="0dp"
-                    android:theme="@style/AppTheme.AppBarOverlay"
                     app:contentInsetStart="0dp"
                     app:contentInsetStartWithNavigation="0dp"
                     app:layout_scrollFlags="scroll|enterAlways">
@@ -43,7 +42,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_close"
-                            android:tint="@color/white"
+                            android:tint="?android:attr/textColorPrimary"
                             android:layout_centerVertical="true"
                             android:layout_alignParentStart="true"
                             android:layout_marginStart="16dp"
@@ -61,15 +60,17 @@
                             android:gravity="center"
                             android:ellipsize="end"
                             android:maxLines="1"
-                            android:textColor="@android:color/white"
+                            android:textColor="?android:attr/textColorPrimary"
                             android:textSize="15sp"
                             android:text="Powered by Simplicity"
                             tools:text="Powered by Simplicity"
                             android:background="?android:attr/selectableItemBackgroundBorderless"
                             android:drawableStart="@drawable/ic_secure_white"
                             android:drawablePadding="8dp"
+                            android:drawableTint="?android:attr/textColorPrimary"
+                            app:drawableTint="?android:attr/textColorPrimary"
                             android:textStyle="normal"
-                            tools:ignore="HardcodedText" />
+                            tools:ignore="HardcodedText,UnusedAttribute" />
 
 
                         <androidx.appcompat.widget.AppCompatImageButton
@@ -77,20 +78,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:src="@drawable/ic_create_pin"
-                            android:tint="@color/white"
+                            android:tint="?android:attr/textColorPrimary"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"
                             android:layout_marginStart="46dp"
                             android:layout_marginEnd="16dp"
                             android:background="?android:attr/selectableItemBackgroundBorderless"/>
 
-
-                        <View
-                            android:visibility="gone"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_alignParentBottom="true"
-                            android:background="@color/m_color"/>
+                        
 
                     </RelativeLayout>
 
@@ -147,7 +142,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_back_button"
-                android:tint="@color/white"
+                android:tint="?android:attr/textColorPrimary"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_weight="1"
                 tools:ignore="ContentDescription" />
@@ -157,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_forward_button"
-                android:tint="@color/white"
+                android:tint="?android:attr/textColorPrimary"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_weight="1"
                 android:alpha="0.4"
@@ -168,7 +163,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_share_now"
-                android:tint="@color/white"
+                android:tint="?android:attr/textColorPrimary"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_weight="1"
                 tools:ignore="ContentDescription" />
@@ -178,7 +173,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_overflow"
-                android:tint="@color/white"
+                android:tint="?android:attr/textColorPrimary"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:layout_weight="1"
                 tools:ignore="ContentDescription" />
