@@ -159,6 +159,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
+                            android:id="@+id/pin_header_left"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:adjustViewBounds="true"
@@ -167,6 +168,7 @@
 
 
                         <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_pro"
                             android:layout_width="74dp"
                             android:layout_height="74dp"
                             android:layout_centerHorizontal="true"
@@ -212,6 +214,62 @@
                                 android:background="@android:color/transparent"
                                 android:clipToPadding="false"
                                 android:overScrollMode="never"/>
+
+
+
+                            <RelativeLayout
+                                android:id="@+id/switch_click"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:padding="16dp"
+                                android:visibility="gone">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    app:drawableStartCompat="@drawable/ic_switch_account"
+                                    android:drawablePadding="30dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="@string/switch_account"
+                                    android:textAppearance="?attr/textAppearanceListItem"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+
+
+                            <RelativeLayout
+                                android:id="@+id/click_profile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:visibility="gone"
+                                android:padding="16dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    app:drawableStartCompat="@drawable/ic_account"
+                                    android:drawablePadding="30dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:text="@string/view_your"
+                                    android:textAppearance="?attr/textAppearanceListItem"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
 
 
                             <RelativeLayout
@@ -942,7 +1000,8 @@
                             android:layout_height="wrap_content"
                             android:background="?android:attr/selectableItemBackground"
                             android:padding="16dp"
-                            android:visibility="gone">
+                            android:visibility="gone"
+                            tools:ignore="TooManyViews">
 
 
                             <TextView
