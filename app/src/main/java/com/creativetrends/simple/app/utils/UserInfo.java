@@ -3,11 +3,9 @@ package com.creativetrends.simple.app.utils;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.text.TextUtils;
-import android.util.Log;
 import android.webkit.CookieManager;
 
 import com.creativetrends.simple.app.adapters.UserItems;
-import com.creativetrends.simple.app.helpers.BadgeHelper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -33,27 +31,18 @@ public class UserInfo extends AsyncTask<Void, Void, String> {
         try {
             document = Jsoup.connect("https://mbasic.facebook.com/me").cookie(("https://m.facebook.com/"), CookieManager.getInstance().getCookie(("https://m.facebook.com/"))).timeout(600000).get();
 
-            if (mName == null) {
+
+            if(mName == null) {
                 mName = document.title();
             }
 
-
-            if (mPage == null) {
+            if(mPage == null) {
                 mPage = document.location();
             }
 
-
-
-            String p = document.getElementsByClass("br").select("div > a > img").attr("src");
-            if (p == null) {
-                mPicture = document.getElementsByClass("_5s61").select("div >  img").attr("src");
-            } else if (p.isEmpty()) {
-                mPicture = "https://graph.facebook.com/" + BadgeHelper.getCookie() + "/picture?type=large&access_token=784465452426381|7fa1ac1552c1d1fffec293c854cfa616";
-            } else {
-                mPicture = p;
+            if (mPicture == null) {
+                mPicture = document.select("div#m-timeline-cover-section").select("img").eq(1).attr("src");
             }
-
-
 
 
         } catch (IllegalArgumentException | NullPointerException ignored) {
@@ -65,16 +54,23 @@ public class UserInfo extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(String string) {
-        super.onPostExecute(string);
-        if (mPicture != null) {
-            PreferencesUtility.putString("user_picture", mPicture);
-        }
+        try {
 
-        if (mName != null) {
-            PreferencesUtility.putString("user_name", mName);
-        }
+            if (mPicture != null) {
+                PreferencesUtility.putString("user_picture", mPicture);
+            }
 
-        new Handler().postDelayed(this::addUser, 2000);
+            if (mName != null) {
+                PreferencesUtility.putString("user_name", mName);
+            }
+
+            new Handler().postDelayed(this::addUser, 2000);
+
+
+        } catch (IllegalArgumentException | NullPointerException ignored) {
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
     }
 
     private void addUser() {
@@ -95,7 +91,8 @@ public class UserInfo extends AsyncTask<Void, Void, String> {
             int indexOf = cookie.indexOf("c_user=") + "c_user=".length();
             string = cookie.substring(indexOf, cookie.indexOf(";", indexOf));
             if (PreferencesUtility.getString("user_name", "").contains("Facebook") || PreferencesUtility.getString("user_name", "").isEmpty()) {
-                Log.d("Ignore!", "User already there.");
+                //noinspection UnnecessaryReturnStatement
+                return;
             } else if (!PreferencesUtility.isUser(mPage)) {
                 ArrayList<UserItems> newList = PreferencesUtility.getUsers();
                 UserItems user = new UserItems();
@@ -107,9 +104,6 @@ public class UserInfo extends AsyncTask<Void, Void, String> {
                 user.setUserPage(mPage);
                 newList.add(user);
                 PreferencesUtility.saveUsers(newList);
-                Log.d("Add!", "its ok to add user.");
-            }else{
-                Log.d("Ignore!", "User already there.");
             }
         } catch (Exception ignored) {
         }
