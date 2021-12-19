@@ -1,9 +1,8 @@
 package com.creativetrends.simple.app.activities;
 
 import android.Manifest;
-import android.animation.ArgbEvaluator;
-import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -25,7 +24,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -34,19 +32,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -57,12 +57,13 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
-import androidx.palette.graphics.Palette;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.creativetrends.simple.app.helpers.BadgeHelper;
+import com.creativetrends.simple.app.helpers.Helpers;
 import com.creativetrends.simple.app.lite.R;
 import com.creativetrends.simple.app.services.NetworkConnection;
 import com.creativetrends.simple.app.utils.ImageSharer;
@@ -71,9 +72,11 @@ import com.creativetrends.simple.app.utils.Sharer;
 import com.creativetrends.simple.app.utils.StaticUtils;
 import com.creativetrends.simple.app.utils.ThemeUtils;
 import com.github.chrisbanes.photoview.PhotoView;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -95,7 +98,6 @@ public class PhotoActivity extends AppCompatActivity {
     View openButton;
     LinearLayout viewButtons;
     ProgressBar mProgressbar;
-    boolean isLoaded = false;
     String genericImage;
     public static String pageUrl;
     String shareRandom;
@@ -143,18 +145,23 @@ public class PhotoActivity extends AppCompatActivity {
         pt = new EditText(this);
         genericImage = getIntent().getStringExtra("url");
         webView = new WebView(this);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setBlockNetworkImage(true);
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient() {
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                genericImage = url;
-                loadImage();
-            }
-        });
-        webView.loadUrl(genericImage);
+        if(genericImage != null && genericImage.startsWith("scontent")){
+            loadImageNow();
+        }else {
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setBlockNetworkImage(true);
+            webView.getSettings().setUserAgentString(WebSettings.getDefaultUserAgent(this).replace("wv", ""));
+            webView.setWebChromeClient(new WebChromeClient());
+            webView.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    genericImage = url;
+                    loadImage();
+                }
+            });
+            webView.loadUrl(genericImage);
+        }
         downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
         shareRandom = UUID.randomUUID() + ".png";
@@ -184,6 +191,23 @@ public class PhotoActivity extends AppCompatActivity {
                 }
                 isDownloadPhoto = true;
                 requestStoragePermission();
+            } catch (Exception i) {
+                i.printStackTrace();
+            }
+
+        });
+
+        shareButton.setOnClickListener(v -> {
+            try {
+                isDownloadPhoto = false;
+                if (!NetworkConnection.isConnected(this)) {
+                    return;
+                }
+                if (!Helpers.hasStoragePermission(this)) {
+                    requestStoragePermission();
+                } else {
+                    shareImage();
+                }
             } catch (Exception i) {
                 i.printStackTrace();
             }
@@ -232,78 +256,25 @@ public class PhotoActivity extends AppCompatActivity {
             }
         });
 
-
-        shareButton.setOnClickListener(v -> {
-            if (genericImage == null) {
-                return;
-            }
-            if (!NetworkConnection.isConnected(PhotoActivity.this)) {
-                return;
-            }
-
-            if (!BadgeHelper.hasStoragePermission(PhotoActivity.this)) {
-                BadgeHelper.requestStoragePermission(PhotoActivity.this);
-            } else if (isLoaded) {
-                Toast.makeText(PhotoActivity.this, getResources().getString(R.string.context_share_image_progress), Toast.LENGTH_SHORT).show();
-                ImageSharer shareImageDownloader = new ImageSharer(new ImageSharer.OnImageLoaderListener() {
-                    @Override
-                    public void onError(ImageSharer.ImageError error) {
-                        Toast.makeText(PhotoActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onProgressChange(int percent) {
-
-                    }
-
-                    @Override
-                    public void onComplete(Bitmap result) {
-                        try {
-                            String filename = "bitmap.png";
-                            FileOutputStream stream = PhotoActivity.this.openFileOutput(filename, Context.MODE_PRIVATE);
-                            result.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                            String path = MediaStore.Images.Media.insertImage(getContentResolver(), result, getString(R.string.app_name_pro), null);
-
-                            Uri uri = Uri.parse(path);
-                            stream.close();
-                            result.recycle();
-
-                            Intent share = new Intent(Intent.ACTION_SEND);
-                            share.setType("image/*");
-                            share.putExtra(Intent.EXTRA_STREAM, uri);
-                            startActivity(Intent.createChooser(share, getResources().getString(R.string.context_share_image)));
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            Toast.makeText(PhotoActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                });
-                shareImageDownloader.download(genericImage, false);
-            }
-        });
+        
 
     }
 
 
     void loadImage() {
-        if(!isDestroyed()) {
+        if (!isDestroyed()) {
             Glide.with(this)
-                    .asBitmap()
                     .load(genericImage)
-                    .into(new CustomTarget<Bitmap>() {
+                    .thumbnail(0.5f)
+                    .format(DecodeFormat.PREFER_RGB_565)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(new CustomTarget<Drawable>() {
                         @Override
-                        public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-                            fullImage.setImageBitmap(resource);
-                            if (!isLoaded) {
-                                fullImage.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-                                mProgressbar.setVisibility(View.INVISIBLE);
-                                viewButtons.setVisibility(View.VISIBLE);
-                                setColor(StaticUtils.darkColorOther(Palette.from(resource).generate().getVibrantColor(Palette.from(resource).generate().getLightVibrantColor(Palette.from(resource).generate().getDarkVibrantColor(Palette.from(resource).generate().getDarkMutedColor(Palette.from(resource).generate().getLightMutedColor(Palette.from(resource).generate().getDarkMutedColor(Palette.from(resource).generate().getDominantColor(ThemeUtils.getColorPrimary(PhotoActivity.this))))))))));
-                                isLoaded = true;
-                            }
-
+                        public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                            fullImage.setImageDrawable(resource);
+                            fullImage.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+                            mProgressbar.setVisibility(View.INVISIBLE);
+                            viewButtons.setVisibility(View.VISIBLE);
                         }
 
                         @Override
@@ -312,8 +283,33 @@ public class PhotoActivity extends AppCompatActivity {
                         }
                     });
 
-        }
 
+        }
+    }
+
+
+    void loadImageNow() {
+        if(!isDestroyed()) {
+            Glide.with(this)
+                    .load(genericImage)
+                    .thumbnail(0.5f)
+                    .format(DecodeFormat.PREFER_RGB_565)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(new CustomTarget<Drawable>() {
+                        @Override
+                        public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                            fullImage.setImageDrawable(resource);
+                            fullImage.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+                            mProgressbar.setVisibility(View.INVISIBLE);
+                            viewButtons.setVisibility(View.VISIBLE);
+                        }
+
+                        @Override
+                        public void onLoadCleared(@Nullable Drawable placeholder) {
+
+                        }
+                    });
+        }
 
     }
 
@@ -395,24 +391,24 @@ public class PhotoActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == 1) {
-            try {
+        try {
+            if (requestCode == 1) {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (!Sharer.resolve(this)) {
-                        genericImage = null;
-                        return;
+                    if (isDownloadPhoto) {
+                        if (!TextUtils.isEmpty(genericImage)) {
+                            startDownload(genericImage);
+                        } else {
+                            Toast.makeText(this, "Error with image URL.", Toast.LENGTH_SHORT).show();
+                        }
+                    } else if (!TextUtils.isEmpty(genericImage)) {
+                        shareImage();
                     }
-                    //new SimpleDownloader(this, this).execute(genericImage);
-                    startDownload(genericImage);
-
                 } else {
                     Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show();
                 }
-            } catch (IllegalStateException ex) {
-                Toast.makeText(this, getString(R.string.permission_denied), Toast.LENGTH_SHORT).show();
-            } catch (Exception exc) {
-                Toast.makeText(this, exc.toString(), Toast.LENGTH_SHORT).show();
             }
+        }catch (Exception p){
+            p.printStackTrace();
         }
     }
 
@@ -434,7 +430,7 @@ public class PhotoActivity extends AppCompatActivity {
             }
             File newFile = new File(simple + File.separator, filename);
             if (newFile.isFile()) {
-                StaticUtils.showSnackBar(PhotoActivity.this, "Image already downloaded.");
+               showSnackBarDownload(PhotoActivity.this);
             } else {
                 request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                 request.setDestinationUri(Uri.parse("file://" + path + File.separator + filename));
@@ -443,6 +439,35 @@ public class PhotoActivity extends AppCompatActivity {
                 request.allowScanningByMediaScanner();
                 downloadManager.enqueue(request);
             }
+        } catch (Exception i) {
+            i.printStackTrace();
+            Toast.makeText(PhotoActivity.this, i.toString(), Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
+    private void startDownloadAgain(String url) {
+        if (!Sharer.resolve(this)) {
+            genericImage = null;
+            return;
+        }
+        String appDirectoryName = "Simple";
+        try {
+            filename = getFileName(url);
+            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+            String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) +File.separator + appDirectoryName;
+            simple = new File(path);
+            if(!simple.exists()){
+                //noinspection ResultOfMethodCallIgnored
+                simple.mkdir();
+            }
+            request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
+            request.setDestinationUri(Uri.parse("file://" + path + File.separator + filename));
+            request.setVisibleInDownloadsUi(true);
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+            request.allowScanningByMediaScanner();
+            downloadManager.enqueue(request);
         } catch (Exception i) {
             i.printStackTrace();
             Toast.makeText(PhotoActivity.this, i.toString(), Toast.LENGTH_SHORT).show();
@@ -521,6 +546,7 @@ public class PhotoActivity extends AppCompatActivity {
     };
 
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private void showNotification(){
         try {
             if(!isDestroyed()) {
@@ -530,13 +556,18 @@ public class PhotoActivity extends AppCompatActivity {
                 else if (filename.contains(".png"))
                     imgExtension = ".png";
 
+                PendingIntent resultPendingIntent;
                 File newFile = new File(simple + File.separator, filename);
                 Uri files = FileProvider.getUriForFile(this, getResources().getString(R.string.auth), newFile);
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setDataAndType(files, getMimeType(files));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                PendingIntent resultPendingIntent = PendingIntent.getActivity(getApplicationContext(), notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                if(StaticUtils.isMarshmallow()){
+                    resultPendingIntent = PendingIntent.getActivity(getApplicationContext(), notificationId, intent, PendingIntent.FLAG_IMMUTABLE);
+                }else{
+                    resultPendingIntent = PendingIntent.getActivity(getApplicationContext(), notificationId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                }
                 build.setContentIntent(resultPendingIntent)
                         .setShowWhen(true)
                         .setWhen(System.currentTimeMillis())
@@ -603,35 +634,7 @@ public class PhotoActivity extends AppCompatActivity {
     }
 
 
-    private void setVideoColor(LinearLayout linearLayout) {
-        if (PreferencesUtility.getBoolean("auto_night", false) && ThemeUtils.isNightTime()) {
-            linearLayout.setBackgroundColor(StaticUtils.adjustAlpha(ContextCompat.getColor(this, R.color.black), 0.3f));
-        } else {
-            switch (PreferencesUtility.getInstance(this).getFreeTheme()) {
-                case "draculatheme":
-                case "darktheme":
-                    linearLayout.getBackground().setColorFilter(new PorterDuffColorFilter(StaticUtils.adjustAlpha(StaticUtils.darkColorTheme(ThemeUtils.getColorPrimaryDark()), 0.3f), PorterDuff.Mode.SRC_IN));
-                    break;
-                case "amoledtheme":
-                    linearLayout.getBackground().setColorFilter(new PorterDuffColorFilter(StaticUtils.adjustAlpha(ContextCompat.getColor(this, R.color.black), 0.3f), PorterDuff.Mode.SRC_IN));
-                    break;
-                default:
-                    linearLayout.getBackground().setColorFilter(new PorterDuffColorFilter(StaticUtils.adjustAlpha(ThemeUtils.getColorPrimary(this), 0.3f), PorterDuff.Mode.SRC_IN));
-                    break;
-            }
 
-        }
-    }
-
-    private void setColor(int color) {
-        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), getWindow().getStatusBarColor(), StaticUtils.adjustAlpha(color, 0.5f));
-        colorAnimation.setDuration(100);
-        colorAnimation.addUpdateListener(animator -> {
-            viewButtons.getBackground().setColorFilter(new PorterDuffColorFilter(((int) animator.getAnimatedValue()), PorterDuff.Mode.SRC_IN));
-            getWindow().setNavigationBarColor(StaticUtils.darkColorTheme((int) animator.getAnimatedValue()));
-        });
-        colorAnimation.start();
-    }
 
 
     @SuppressWarnings({"SuspiciousNameCombination", "IntegerDivisionInFloatingPointContext"})
@@ -674,4 +677,73 @@ public class PhotoActivity extends AppCompatActivity {
         return output;
     }
 
+    private void showSnackBarDownload(Activity mActivity){
+        Snackbar snackbar = Snackbar.make(mActivity.getWindow().getDecorView().getRootView(), "Image already downloaded.", Snackbar.LENGTH_INDEFINITE);
+        View snackBarView = snackbar.getView();
+        snackBarView.setTranslationY(-(StaticUtils.convertDpToPixel(48, mActivity)));
+        TextView snack = snackbar.getView().findViewById(com.google.android.material.R.id.snackbar_action);
+        snack.setAllCaps(false);
+        snackbar.setAction("Download Again?", view -> startDownloadAgain(genericImage));
+        snackbar.show();
+    }
+
+
+    private void shareImage() {
+        if (genericImage == null) {
+            Toast.makeText(getApplicationContext(), "Error with image url", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!NetworkConnection.isConnected(this)) {
+            Toast.makeText(getApplicationContext(), "You are not online.", Toast.LENGTH_SHORT).show();
+        } else if (!Helpers.hasStoragePermission(this)) {
+            Helpers.requestStoragePermission(this);
+        } else {
+            ImageSharer shareImageDownloader = new ImageSharer(new ImageSharer.OnImageLoaderListener() {
+                public void onError(ImageSharer.ImageError error) {
+                    Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+
+                }
+
+                public void onProgressChange(int percent) {
+                }
+
+                public void onComplete(Bitmap result) {
+                    try {
+                        try {
+                            File cachePath = new File(getCacheDir(), getResources().getString(R.string.file_child));
+                            //noinspection ResultOfMethodCallIgnored
+                            cachePath.mkdirs();
+                            FileOutputStream stream = new FileOutputStream(cachePath + "/" + shareRandom);
+                            if (result != null) {
+                                result.compress(Bitmap.CompressFormat.JPEG, 80, stream);
+                            }
+                            stream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        File imagePath = new File(getCacheDir(), getResources().getString(R.string.file_stuff));
+                        File newFile = new File(imagePath, shareRandom);
+                        Uri contentUri = FileProvider.getUriForFile(PhotoActivity.this, getResources().getString(R.string.auth), newFile);
+                        if (contentUri != null) {
+                            Intent shareIntent = new Intent();
+                            shareIntent.setAction(Intent.ACTION_SEND);
+                            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                            shareIntent.setType(getContentResolver().getType(contentUri));
+                            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+                            startActivity(shareIntent);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                }
+            });
+            shareImageDownloader.download(genericImage, false);
+        }
+
+    }
 }
+
